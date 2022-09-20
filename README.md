@@ -1,6 +1,6 @@
 # Architecture
 
-Dépôt présentant des notions d'architecture logiciel avec des exemples d'implémentation en PHP (via le framework SlimPHP).
+Dépôt présentant des notions d'architecture logicielle avec des exemples d'implémentations en PHP (via le framework SlimPHP).
 
 ## ADR - Action Domain Responder
 
