@@ -11,7 +11,7 @@ EXEC_PHP?=$(DOCKER_COMPOSE) exec php
 install: build start ## Install and start the project with vendors update
 
 up: ## Start the project without vendors update
-	$(DOCKER_COMPOSE) up -d --remove-orphans
+	$(DOCKER_COMPOSE) up --remove-orphans
 
 start: up vendor ## Start the project with vendors update
 

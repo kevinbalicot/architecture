@@ -18,13 +18,13 @@ $app->add(function (Request $request, $handler) {
 });
 
 $app->get('/', function (Request $request, Response $response) use ($app) {
-    $action = $app->getContainer()->get('homepage_action');
+    $action = $app->getContainer()->get('index_comment_action');
 
     return $action($request, $response);
 });
 
 $app->post('/api/comment', function (Request $request, Response $response) use ($app) {
-    $action = $app->getContainer()->get('post_comment_action');
+    $action = $app->getContainer()->get('add_comment_action');
 
     return $action($request, $response);
 });
