@@ -1,0 +1,44 @@
+#!/bin/sh
+
+env=dev
+docker=false
+
+for arg in "$@"; do
+    case "$arg" in
+    --env=*)
+        env=`echo $arg | sed 's/--env=//'`
+    ;;
+
+    --with-docker)
+        docker=true
+    ;;
+
+    --help)
+        echo 'usage: ./configure [options]'
+        echo ''
+        echo 'options:'
+        echo '  --env=<env>: current env (dev|labo|prod)'
+        echo '  --with-docker: enable docker'
+        echo ''
+        echo 'All invalid options are silently ignored!'
+        exit 0
+    ;;
+
+    esac
+done
+
+echo "Generating files for $env environment..."
+cp -rT ./../infrastructure/$env/autoconf/ ./
+
+if [ $docker = true ]; then
+  cp ./../infrastructure/docker/autoconf/docker-compose.yaml.dist ./docker-compose.yaml
+  cp ./../infrastructure/docker/autoconf/Makefile.dist ./
+fi
+
+if [ $env = prod ]; then
+  echo "Damn! production"
+fi
+
+mv ./Makefile.dist ./Makefile
+
+echo 'Configuration complete'
