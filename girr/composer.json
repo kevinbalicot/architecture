@@ -1,0 +1,16 @@
+{
+    "require": {
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.5",
+        "slim/php-view": "^3.2",
+        "ext-json": "*",
+        "php-di/php-di": "^6.4",
+        "symfony/messenger": "^6.1",
+        "monolog/monolog": "^3.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}

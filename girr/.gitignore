@@ -1,0 +1,17 @@
+vendor/
+
+!data
+data/*
+/var/log/*
+!/var/log
+
+###> dev environment ##
+.editorconfig
+/Makefile
+/Makefile.local
+###< dev environment ###
+
+###> docker environment ##
+/docker-compose*
+/docker-dev.lock
+###< docker environment ###

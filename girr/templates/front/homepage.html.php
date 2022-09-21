@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GIRR - Gateway, Instrumentation, Request & Response</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>Livre d'or</h1>
+
+                <?php include 'include/_form.html.php'; ?>
+
+                <ul class="list-group mt-3">
+                    <?php foreach ($comments as $comment) { ?>
+                        <li class="list-group-item">
+                            <strong><?= $comment->getUsername() ?></strong>
+                            <p><?= $comment->getMessage() ?></p>
+                        </li>
+                    <?php } ?>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
