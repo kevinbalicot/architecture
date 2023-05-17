@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+
+    php:
+        image: php:8.1-cli
+        tty: true
+        working_dir: /home/app/public
+        ports:
+            - "8080:8080"
+        volumes:
+            - "./:/home/app"
+        entrypoint: "php -S 0.0.0.0:8080"
