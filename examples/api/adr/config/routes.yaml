@@ -1,0 +1,5 @@
+controllers:
+    resource:
+        path: ../src/UI/API
+        namespace: App\UI\API
+    type: attribute
